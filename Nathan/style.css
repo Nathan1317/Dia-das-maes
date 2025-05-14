@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to top, #ff3a6f, #ffffff);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.mensagem-central {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+    color: #000000;
+    z-index: 2;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 2em;
+    font-family: "Indie Flower", cursive;
+}
+
+.subtitulo {
+    margin: 0;
+    font-size: 10em;
+    font-family: "Dancing Script", cursive;
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.frase {
+    position: absolute;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: rgb(93, 225, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    animation: subir 6s linear forwards, crescer 3s ease-out;
+    opacity: 0.9;
+    white-space: nowrap;
+    font-family: "Libre Baskerville", serif;
+}
+
+.imagem {
+    position: absolute;
+    bottom: 0;
+    animation: subir 6s linear forwards, crescer 3s ease-out;
+    pointer-events: none;
+}
+
+@keyframes subir {
+    0% {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes crescer {
+    0% {
+        transform: scale(0.2);
+    }
+
+    200% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animar-subtitulo {
+    animation: pulsar 3s infinite;
+}
+
+@media (max-width: 600px) {
+    .titulo {
+        font-size: 1.5em;
+    }
+
+    .subtitulo {
+        font-size: 4em;
+    }
+
+    #container {
+        height: 100dvh;
+        padding: 10px;
+    }
+
+    .frase {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
